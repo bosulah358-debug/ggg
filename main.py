@@ -12,7 +12,7 @@ from database import Database # MAKE SURE THIS FILE EXISTS AND SUPPORTS NEW LOCK
 
 # --- Global Configuration (Read from Environment) ---
 # ستقوم Render بتعيين هذه المتغيرات تلقائياً
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
+BOT_TOKEN = os.environ.get("8458158034:AAGbNwJH5Sn2FQqnkxIkZTvLWjglGUfcBaU")
 PORT = int(os.environ.get('PORT', 8080))
 WEBHOOK_URL = os.environ.get('WEBHOOK_URL', 'https://your-app-name.onrender.com') 
 
