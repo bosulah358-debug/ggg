@@ -1,0 +1,3 @@
+git add .
+git commit -m "Add requirements.txt and final code for Render"
+git push origin main
