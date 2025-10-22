@@ -12,10 +12,9 @@ from database import Database # MAKE SURE THIS FILE EXISTS AND SUPPORTS NEW LOCK
 
 # --- Global Configuration (Read from Environment) ---
 # ستقوم Render بتعيين هذه المتغيرات تلقائياً
-BOT_TOKEN = os.environ.get("8458158034:AAGbNwJH5Sn2FQqnkxIkZTvLWjglGUfcBaU")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")  # <--- تم تغيير القيمة إلى "BOT_TOKEN"
 PORT = int(os.environ.get('PORT', 8080))
-WEBHOOK_URL = os.environ.get('WEBHOOK_URL', 'https://your-app-name.onrender.com') 
-
+WEBHOOK_URL = os.environ.get('WEBHOOK_URL', 'https://your-app-name.onrender.com')
 if not BOT_TOKEN:
     # هذا الخطأ سيوقف التشغيل إذا لم يتم تعيين التوكن في Render
     raise ValueError("BOT_TOKEN environment variable not set. Please set it on Render.")
