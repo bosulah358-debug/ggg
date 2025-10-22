@@ -1,0 +1,4 @@
+python-telegram-bot
+pytz
+# إذا كنت تستخدم قاعدة بيانات (Database) خارجية، أضف مكتبتها هنا:
+# (مثال لـ PostgreSQL): psycopg2-binary
