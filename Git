@@ -1,3 +1,8 @@
-git add .
-git commit -m "Add requirements.txt and final code for Render"
+# 1. Stage the file for commit
+git add database.py
+
+# 2. Commit the changes
+git commit -m "Added the missing database.py file"
+
+# 3. Push the changes to GitHub/GitLab (where Render pulls from)
 git push origin main
