@@ -12,7 +12,7 @@ from database import Database # تأكد أن هذا الملف موجود وص�
 
 # -------------------- Global Configuration --------------------
 # يجب تعيين BOT_TOKEN و WEBHOOK_URL في Render Dashboard
-BOT_TOKEN = os.environ.get("BOT_TOKEN") 
+BOT_TOKEN = os.environ.get("8458158034:AAGbNwJH5Sn2FQqnkxIkZTvLWjglGUfcBaU") 
 PORT = int(os.environ.get('PORT', 8080))
 WEBHOOK_URL = os.environ.get('WEBHOOK_URL', 'https://your-app-name.onrender.com')
 
