@@ -1,4 +1,3 @@
-python-telegram-bot
+python-telegram-bot[webhooks]
 pytz
-# إذا كنت تستخدم قاعدة بيانات (Database) خارجية، أضف مكتبتها هنا:
-# (مثال لـ PostgreSQL): psycopg2-binary
+# ... أي مكتبات أخرى
