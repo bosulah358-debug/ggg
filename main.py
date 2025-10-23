@@ -20,6 +20,37 @@ if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN environment variable not set. Please set it on Render.")
 # ----------------------------------------------------
 
+# ... (ضع هذا الكود في ملف main.py قبل دالة main())
+
+async def add_reply_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_chat.type == 'private':
+        await update.message.reply_text("هذا الأمر يعمل فقط في المجموعات.")
+        return ConversationHandler.END
+    
+    if not await is_admin(update, context):
+        await update.message.reply_text("هذا الأمر للمشرفين فقط")
+        return ConversationHandler.END
+    
+    await update.message.reply_text("حسناً الآن ارسل الكلمة التي تريدها للرد.")
+    return WAITING_FOR_KEYWORD
+
+async def cancel_add_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    context.user_data.clear()
+    await update.message.reply_text("تم الغاء اضافة الرد")
+    return ConversationHandler.END
+
+# تأكد أيضًا من وجود هذه الدوال للردود العامة إذا كنت تستخدمها
+async def add_global_reply_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.effective_user.id
+    # منطق التحقق من المطور
+    if update.effective_user.username != OWNER_USERNAME.lstrip('@'): 
+        await update.message.reply_text("هذا الأمر للمطور فقط")
+        return ConversationHandler.END
+    
+    await update.message.reply_text("حسنًا، أرسل الكلمة التي تريد أن يرد عليها.")
+    return WAITING_FOR_GLOBAL_KEYWORD
+
+# ... (تأكد من وجود باقي دوال المحادثة مثل receive_keyword، receive_reply، إلخ.)
 # Define conversation states globally (Updated to include new states)
 WAITING_FOR_KEYWORD, WAITING_FOR_REPLY = range(2)
 WAITING_FOR_GLOBAL_KEYWORD, WAITING_FOR_GLOBAL_REPLY = range(2, 4)
